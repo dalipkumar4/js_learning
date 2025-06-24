@@ -12,7 +12,7 @@ let userEmail;
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
-console.log(id === anotherId);
+// console.log(id === anotherId);
 
 const bigNumber = 2451535253355323525n
 
@@ -33,4 +33,36 @@ const myFunction = function() {
     console.log("Hello Dalip");
 }
 
-console.log(typeof myFunction)
+// console.log(typeof myFunction)
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+// HEAP: - when we stored something in heap  we get REFERENCE
+// STACK: - when we stored something in stack then we get COPY
+
+
+// Primitive value stored in stack
+// Not Primitive values stored in heap
+
+let myYoutubename = "dalipkumar"
+
+let anothername = myYoutubename
+anothername = "jainhopper"
+
+// console.log(myYoutubename);
+// console.log(anothername);
+
+let userOne = { // It will copy and to HEAP
+    email: "dalip@gmail.com",
+    upi: "dalip@ibl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "max@gmail.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
