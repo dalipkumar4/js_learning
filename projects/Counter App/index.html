@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            height: 440px;
+            width: 400px;
+            background-color: rgb(39, 39, 39);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 19px rgb(255, 255, 255);
+        }
+
+        .box{
+            display: flex;               /* enable flex layout */
+            justify-content: center;     /* center horizontally */
+            align-items: center;         /* center vertically */
+            border-radius: 10px;
+            height: 320px;
+            width: 320px;
+            border: 2px solid rgb(255, 255, 255);
+            color: white;
+            font-size: 15rem;
+            flex-wrap: wrap;
+            
+        }
+
+        .box-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .btn1{
+            background-color: blue;
+        }
+        .btn2{
+            background-color: rgb(243, 179, 3);
+        }
+        .btn3{
+            background-color: rgb(223, 0, 0);
+        }
+
+        button{
+            position: relative;
+            top: 8px;
+            padding: 10px 20px;
+            font-size: 12px;
+            border-radius: 5px;
+            background-color: rgb(230, 177, 2);
+            color: rgb(255, 255, 255);
+            border: none;
+            box-shadow: 1px 1px 9px rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <div class="box">0</div>
+    <div class="box-container">
+    <button class="btn1">Add</button>
+    <button class="btn2">Remove</button>
+    <button class="btn3">Reset</button>
+    </div>
+    </div>
+
+    
+</body>
+
+<script>
+    const btn1 = document.querySelector('.btn1');
+    const btn2 = document.querySelector('.btn2');
+    const btn3 = document.querySelector('.btn3');
+    const textBox = document.querySelector('.box');
+
+    let count = 0;
+    btn1.addEventListener('click',() => {
+        count++;
+        textBox.innerText = count;
+    })
+    btn2.addEventListener('click',() => {
+        count--;
+        textBox.innerText = count;
+    })
+    btn3.addEventListener('click',() => {
+
+        textBox.innerText = 0;
+    })
+
+</script>
+</html>
