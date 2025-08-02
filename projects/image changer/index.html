@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 98vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: rgb(34, 34, 34);
+        flex-wrap: wrap;
+      }
+
+      img {
+        height: 300px;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+      }
+
+      .btns{
+        display: flex;
+        gap: 50px;
+      }
+
+      button {
+        background-color: rgb(231, 150, 0);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 11px;
+        font-size: 17px;
+        margin-top: 20px;
+        box-shadow: 3px 3px  13px black;
+        cursor: pointer;
+      }
+
+      .box {
+  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img id="main-img" src="https://s4.tvp.pl/images2/4/a/0/uid_4a0385f9c24e451099f2a96b046d4068_width_1200_play_0_pos_0_gs_0_height_678_cristiano-ronaldo-pochwalil-sie-liczba-obserwujacych-fot-getty.jpg" alt="Initial Image" />
+      <div class="btns">
+        <button id="prvs-btn">Previous</button>
+      <button id="nxt-btn">Next</button>
+      <button id="rst-btn">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      const img = document.getElementById('main-img');
+      const prvsBtn = document.getElementById('prvs-btn');
+      const nxtBtn = document.getElementById('nxt-btn');
+      const rstBtn = document.getElementById('rst-btn');
+      
+      const images = [
+        "https://s4.tvp.pl/images2/4/a/0/uid_4a0385f9c24e451099f2a96b046d4068_width_1200_play_0_pos_0_gs_0_height_678_cristiano-ronaldo-pochwalil-sie-liczba-obserwujacych-fot-getty.jpg",
+        "https://cdn.britannica.com/05/236505-050-17B6E34A/Elon-Musk-2022.jpg",
+        "https://media.cnn.com/api/v1/images/stellar/prod/2024-04-14t035725z-1594339199-rc2167a24z3p-rtrmadp-3-awards-breakthrough-prize.JPG?c=16x9&q=h_833,w_1480,c_fill",
+        "https://cloudfront-us-east-1.images.arcpublishing.com/estadao/FIWOURXAVBC23HA2MTQ2BSNYOU.jpg",
+        "https://static.euronews.com/articles/stories/09/20/19/42/1536x864_cmsv2_5f02236e-d610-5b77-b5f0-f72d482c6ef2-9201942.jpg",
+        "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2025-01/250107-Jensen-Huang-ch-1005-0f8042.jpg",
+        "https://media.npr.org/assets/img/2023/09/13/gettyimages-1661854335_slide-8654ded9c38f763f9085930ba12bb300bf4c8f66.jpg",
+      ];
+
+      let index = 0;
+
+      nxtBtn.addEventListener('click', () => {
+        if(index == images.length-1){
+          alert("This is the END");
+        }
+        else{
+          index++;
+          img.src = images[index];
+        }
+      });
+      prvsBtn.addEventListener('click', () => {
+        if(index == 0){
+          alert("This is the START");
+        }
+        else{
+        index--;
+        img.src = images[index];
+        }
+      });
+      rstBtn.addEventListener('click', () => {
+        index = 0;
+        img.src = images[index];
+      });
+    </script>
+  </body>
+</html>
